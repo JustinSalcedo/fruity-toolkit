@@ -1,0 +1,28 @@
+{
+    "candidates": [
+        {
+            "content": {
+                "parts": [
+                    {
+                        "text": "Here is a minimal 1x1 PNG you requested."
+                    },
+                    {
+                        "inlineData": {
+                            "mimeType": "image/png",
+                            "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGP4z8AAAAADAAHO+aVfAAAAAElFTkSuQmCC"
+                        }
+                    }
+                ],
+                "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+        }
+    ],
+    "modelVersion": "gemini-3.1-flash-image-preview",
+    "usageMetadata": {
+        "promptTokenCount": 12,
+        "candidatesTokenCount": 8,
+        "totalTokenCount": 20
+    }
+}

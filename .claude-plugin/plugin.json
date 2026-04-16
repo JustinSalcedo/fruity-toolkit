@@ -1,0 +1,18 @@
+{
+    "name": "gemini-toolkit",
+    "version": "0.1.0",
+    "description": "Gemini CLI + API integration for Claude Code: long-context analysis, image generation, multimodal vision, and Claude-to-Gemini skill sync",
+    "author": {
+        "name": "Justin Salcedo"
+    },
+    "keywords": [
+        "gemini",
+        "google",
+        "long-context",
+        "image-generation",
+        "vision",
+        "multimodal",
+        "skill-sync",
+        "claude-code"
+    ]
+}

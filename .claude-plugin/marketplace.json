@@ -1,0 +1,33 @@
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "gemini-toolkit",
+    "description": "Gemini CLI and API integration for Claude Code",
+    "owner": {
+        "name": "Justin Salcedo",
+        "email": ""
+    },
+    "plugins": [
+        {
+            "name": "gemini-toolkit",
+            "description": "Long-context code analysis via Gemini CLI, image generation, multimodal vision, and Claude-to-Gemini skill sync",
+            "version": "0.1.0",
+            "author": {
+                "name": "Justin Salcedo"
+            },
+            "source": "./",
+            "category": "integrations",
+            "keywords": [
+                "gemini",
+                "google",
+                "long-context",
+                "image-generation",
+                "vision",
+                "multimodal",
+                "skill-sync",
+                "claude-code"
+            ],
+            "homepage": "https://github.com/JustinSalcedo/gemini-toolkit",
+            "repository": "https://github.com/JustinSalcedo/gemini-toolkit"
+        }
+    ]
+}
