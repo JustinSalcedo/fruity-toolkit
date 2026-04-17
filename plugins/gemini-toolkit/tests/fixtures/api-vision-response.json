@@ -1,0 +1,22 @@
+{
+    "candidates": [
+        {
+            "content": {
+                "parts": [
+                    {
+                        "text": "The image shows a single white pixel. There is no discernible subject, composition, or palette beyond the single color."
+                    }
+                ],
+                "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+        }
+    ],
+    "modelVersion": "gemini-3-flash-preview",
+    "usageMetadata": {
+        "promptTokenCount": 260,
+        "candidatesTokenCount": 28,
+        "totalTokenCount": 288
+    }
+}
