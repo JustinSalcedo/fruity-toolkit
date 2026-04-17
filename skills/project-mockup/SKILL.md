@@ -164,7 +164,7 @@ Return this exact JSON shape:
 }
 ```
 
-Pass `format: json` to `/gemini-toolkit:vision` so the response is parsed.
+Pass `format: json` to `/gemini-toolkit:vision` so the response is parsed. The current default vision model (`gemini-3-flash-preview`) was picked by the benchmark documented in the appendix below. If your account doesn't have access to the preview, fall back with `--model gemini-2.5-flash` — quality drops noticeably (see appendix) but the skill still functions.
 
 ### Step 6 — Compute weighted fidelity score
 
@@ -291,3 +291,49 @@ Return a structured report:
 ```
 
 Follow with a short suggestion for manual edits if any defect is still visible and the user cares more than the score does.
+
+---
+
+## Benchmark (2026-04-17)
+
+The Step 5 scoring model was picked empirically. Four vision models were compared on a real mockup (`ember-v3.jpeg`, dark-theme productivity mobile screen) using a two-task protocol — free-form description (30% weight) and structured JSON scoring per the Step 5 rubric (70% weight) — with a blind Opus 4.7 judge.
+
+### Round 1 — four-way
+
+| Rank | Model | Final | Task B latency | Headline |
+|---|---|---|---|---|
+| 1 | Haiku 4.5 | 92.18 | 12s | Grounded, fast, minimal hallucination |
+| 2 | Opus 4.7 | 94.66 (→ tie-broken) | 16s | Tightest accuracy but not worth the cost/latency |
+| 3 | Sonnet 4.6 | 81.77 | 21s | Hallucinated rounded corners that leaked into scoring |
+| 4 | Gemini 2.5 Flash | 73.68 | 30s | Confabulated full iOS status bar; mis-weighted color |
+
+Opus's raw numeric top-rank was tie-broken away by (a) the self-preference safeguard (judge was also Opus, margin <5 points) and (b) latency.
+
+### Round 2 — rematch with the new Gemini model
+
+Prompted by the gap: swap `gemini-2.5-flash` → `gemini-3-flash-preview`, re-run.
+
+| Rank | Model | Final | Task B latency |
+|---|---|---|---|
+| 1 | **Gemini 3 Flash** (after tie-break) | 91.03 | 12.86s |
+| 2 | Haiku 4.5 | 92.84 | 17s |
+
+Raw margin Haiku +1.81 → inside the 3-point band → latency tie-breaker → Gemini 3 Flash.
+
+Gemini 3 Flash closed an **18-point gap** vs. Gemini 2.5 on Task B alone, fixed both of 2.5's failure modes (chrome confabulation, color nit-picking), and is 2.3× faster. Haiku retains tighter per-criterion calibration but introduced its own hallucinations in round 2 (iOS claim, phantom rounded corners, fabricated decorative dot) — its grounding is less stable than round 1 suggested.
+
+### Decision
+
+Default scorer is **`gemini-3-flash-preview`** via `/gemini-toolkit:vision`. Chosen because:
+
+1. It wins the rematch tie-breaker cleanly.
+2. Keeps the plugin's execution path uniform (one vendor, one auth, one pricing model).
+3. Haiku-based fallback exists in the Agent tool if the preview model is ever retired; swap `--model gemini-2.5-flash` for the legacy path.
+
+Full report: `/tmp/vision-bench-rematch/bench-report-rematch.md` (transient; see git log / original run for reproduction).
+
+### Caveats
+
+- Gemini 3 Flash scores cluster near 100 — **calibration is looser than Haiku's**. If users report the loop accepting images they consider defective, revisit.
+- `-preview` means the model is subject to change. Re-bench when the preview graduates or a new family Flash model lands.
+- Single-image benchmark. Not tested on web, light-theme, or non-mobile mockups.

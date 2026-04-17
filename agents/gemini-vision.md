@@ -34,7 +34,7 @@ node ${CLAUDE_PLUGIN_ROOT}/scripts/gemini-api.js \
 Flags:
 - `--files` (required, comma-separated): one or more paths.
 - `--task` (required): what you want Gemini to do with the inputs.
-- `--model` (optional): defaults to `gemini-2.5-flash`. Use `gemini-2.5-pro` for dense PDFs or subtle image analysis.
+- `--model` (optional): defaults to `gemini-3-flash-preview`. Use `gemini-3-pro-preview` for dense PDFs or subtle image analysis. Fallback to `gemini-2.5-flash` if the preview model is unavailable for your account.
 - `--format text|json`: defaults to `text`. Use `json` when you need a parseable output schema; include the schema in your `--task`.
 
 ## Reading the output

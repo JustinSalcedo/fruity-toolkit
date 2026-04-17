@@ -19,7 +19,7 @@ function alignExtensionToMime(path, mimeType) {
 
 const API_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
 const DEFAULT_IMAGE_MODEL = "gemini-3.1-flash-image-preview";
-const DEFAULT_VISION_MODEL = "gemini-2.5-flash";
+const DEFAULT_VISION_MODEL = "gemini-3-flash-preview";
 
 function apiKey() {
     const key = process.env.GEMINI_API_KEY;

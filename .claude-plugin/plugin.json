@@ -1,6 +1,6 @@
 {
     "name": "gemini-toolkit",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "description": "Gemini CLI + API integration for Claude Code: long-context analysis, image generation, multimodal vision, Claude-to-Gemini skill sync, plus Gemini-tested mockup prompting and a project-aware mockup orchestrator with fidelity-scored iteration",
     "author": {
         "name": "Justin Salcedo"
