@@ -9,8 +9,8 @@
     "plugins": [
         {
             "name": "gemini-toolkit",
-            "description": "Long-context code analysis via Gemini CLI, image generation, multimodal vision, and Claude-to-Gemini skill sync",
-            "version": "0.1.0",
+            "description": "Long-context code analysis via Gemini CLI, image generation, multimodal vision, Claude-to-Gemini skill sync, plus Gemini-tested mockup prompting and a project-aware mockup orchestrator with fidelity-scored iteration",
+            "version": "0.2.0",
             "author": {
                 "name": "Justin Salcedo"
             },
@@ -24,6 +24,9 @@
                 "vision",
                 "multimodal",
                 "skill-sync",
+                "mockup",
+                "ui",
+                "design",
                 "claude-code"
             ],
             "homepage": "https://github.com/JustinSalcedo/gemini-toolkit",

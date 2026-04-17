@@ -1,6 +1,8 @@
 # gemini-toolkit
 
-A Claude Code plugin that wires Google's Gemini CLI and Gemini API into four focused capabilities:
+A Claude Code plugin that wires Google's Gemini CLI and Gemini API into four focused commands, plus two bundled skills that turn those commands into a design-mockup workflow.
+
+**Commands:**
 
 | Command                      | What it does                                    | Backed by                                  |
 | ---------------------------- | ----------------------------------------------- | ------------------------------------------ |
@@ -8,6 +10,15 @@ A Claude Code plugin that wires Google's Gemini CLI and Gemini API into four foc
 | `/gemini-toolkit:vision`     | Analyze images, screenshots, and PDFs           | Gemini API via `scripts/gemini-api.js`      |
 | `/gemini-toolkit:imagine`    | Generate images from a prompt                   | Gemini API via `scripts/gemini-api.js`      |
 | `/gemini-toolkit:skill-sync` | Translate a Claude Code skill into Gemini skill | `scripts/gemini-skill-sync.js`              |
+
+**Skills (new in 0.2.0):**
+
+| Skill                    | Purpose                                                                          |
+| ------------------------ | -------------------------------------------------------------------------------- |
+| `mockup-prompt-gemini`   | Gemini-tested guardrails for UI mockup prompts (companion to universal `mockup-prompt`) |
+| `project-mockup`         | Orchestrator: project-context discovery → prompt → image → vision-scored iteration |
+
+`project-mockup` chains `mockup-prompt-gemini` + `/gemini-toolkit:imagine` + `/gemini-toolkit:vision` into a single loop with a fidelity score and a configurable generation budget.
 
 ## Installation
 
@@ -22,8 +33,19 @@ A Claude Code plugin that wires Google's Gemini CLI and Gemini API into four foc
 | Dependency         | Required for           | Install                       |
 | ------------------ | ---------------------- | ----------------------------- |
 | Gemini CLI >= 0.38 | `analyze`, `skill-sync` | `npm i -g @google/gemini-cli` |
-| `GEMINI_API_KEY`   | `imagine`, `vision`    | `export GEMINI_API_KEY=...`   |
+| `GEMINI_API_KEY`   | `imagine`, `vision`, `project-mockup` | `export GEMINI_API_KEY=...`   |
 | Node >= 22         | All scripts            | Shipped with Claude Code      |
+
+### Recommended companion plugin
+
+The bundled `mockup-prompt-gemini` skill references a universal `mockup-prompt` skill for base structure. Install it for the full corrective-defect table and non-Gemini model notes:
+
+```bash
+/plugin marketplace add JustinSalcedo/mockup-prompt
+/plugin install mockup-prompt@mockup-prompt
+```
+
+The Gemini-specific skill still works without it — the base reference just adds corrective depth.
 
 ## Usage
 
@@ -62,6 +84,20 @@ If `--output` is omitted, images land in `./assets/` or `./images/` (if they exi
 ```
 
 Writes `~/.gemini/skills/synced/<name>/SKILL.md` and, if `--install` is passed, runs `gemini skills link` to activate it.
+
+### project-mockup — project-aware mockup with scored iteration
+
+Claude surfaces this skill when you ask for a UI mockup image:
+
+```
+Render the dashboard screen for this project.
+Draft a mockup of the pricing page, warm dark theme.
+Make me a mobile login mockup.
+```
+
+The skill scans the project for design tokens (Tailwind config, CSS variables, `theme.ts`, etc.), builds a context-aware prompt via `mockup-prompt-gemini`, renders via `/gemini-toolkit:imagine`, then scores the image via `/gemini-toolkit:vision` against a 7-criterion rubric. Iterates until the weighted fidelity score clears a threshold (default 85) or a Gemini generation budget (default 3) is exhausted.
+
+Accepts inline direction: `budget=5`, `threshold=90`, `direction="focus on text fidelity"`, `overrun-policy=ask|accept|extend=N`.
 
 ## Manual test plan
 
