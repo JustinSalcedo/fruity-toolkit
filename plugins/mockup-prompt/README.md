@@ -12,8 +12,8 @@ The plugin ships a single `mockup-prompt` skill. Claude will surface it when you
 ## Installation
 
 ```bash
-/plugin marketplace add JustinSalcedo/mockup-prompt
-/plugin install mockup-prompt@mockup-prompt
+/plugin marketplace add JustinSalcedo/fruity-toolkit
+/plugin install mockup-prompt@fruity-toolkit
 /reload-plugins
 ```
 

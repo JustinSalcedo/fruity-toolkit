@@ -14,10 +14,7 @@
             "author": {
                 "name": "Justin Salcedo"
             },
-            "source": {
-                "source": "github",
-                "repo": "JustinSalcedo/gemini-toolkit"
-            },
+            "source": "./plugins/gemini-toolkit",
             "category": "integrations",
             "keywords": [
                 "gemini",
@@ -32,8 +29,8 @@
                 "design",
                 "claude-code"
             ],
-            "homepage": "https://github.com/JustinSalcedo/gemini-toolkit",
-            "repository": "https://github.com/JustinSalcedo/gemini-toolkit"
+            "homepage": "https://github.com/JustinSalcedo/fruity-toolkit/tree/main/plugins/gemini-toolkit",
+            "repository": "https://github.com/JustinSalcedo/fruity-toolkit/tree/main/plugins/gemini-toolkit"
         },
         {
             "name": "mockup-prompt",
@@ -42,10 +39,7 @@
             "author": {
                 "name": "Justin Salcedo"
             },
-            "source": {
-                "source": "github",
-                "repo": "JustinSalcedo/mockup-prompt"
-            },
+            "source": "./plugins/mockup-prompt",
             "category": "design",
             "keywords": [
                 "mockup",
@@ -60,8 +54,8 @@
                 "stable-diffusion",
                 "claude-code"
             ],
-            "homepage": "https://github.com/JustinSalcedo/mockup-prompt",
-            "repository": "https://github.com/JustinSalcedo/mockup-prompt"
+            "homepage": "https://github.com/JustinSalcedo/fruity-toolkit/tree/main/plugins/mockup-prompt",
+            "repository": "https://github.com/JustinSalcedo/fruity-toolkit/tree/main/plugins/mockup-prompt"
         }
     ]
 }

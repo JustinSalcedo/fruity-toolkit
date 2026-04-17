@@ -23,8 +23,8 @@ A Claude Code plugin that wires Google's Gemini CLI and Gemini API into four foc
 ## Installation
 
 ```bash
-/plugin marketplace add JustinSalcedo/gemini-toolkit
-/plugin install gemini-toolkit@gemini-toolkit
+/plugin marketplace add JustinSalcedo/fruity-toolkit
+/plugin install gemini-toolkit@fruity-toolkit
 /reload-plugins
 ```
 
