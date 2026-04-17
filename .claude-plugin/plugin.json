@@ -1,0 +1,21 @@
+{
+    "name": "mockup-prompt",
+    "version": "0.1.0",
+    "description": "Guardrail-enforced prompt generation for AI image models rendering UI mockups (GPT Image, Ideogram, FLUX, Midjourney, Stable Diffusion, and more). Produces prompts that suppress common failure modes: device hardware bleed, perspective warp, background color bleed, garbled text.",
+    "author": {
+        "name": "Justin Salcedo"
+    },
+    "keywords": [
+        "mockup",
+        "ui",
+        "prompt-engineering",
+        "image-generation",
+        "design",
+        "gpt-image",
+        "ideogram",
+        "flux",
+        "midjourney",
+        "stable-diffusion",
+        "claude-code"
+    ]
+}

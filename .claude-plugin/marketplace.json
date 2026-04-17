@@ -1,0 +1,36 @@
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "mockup-prompt",
+    "description": "Universal UI mockup prompt generation for AI image models",
+    "owner": {
+        "name": "Justin Salcedo",
+        "email": ""
+    },
+    "plugins": [
+        {
+            "name": "mockup-prompt",
+            "description": "Guardrail-enforced prompts for rendering UI mockups with GPT Image, Ideogram, FLUX, Midjourney, Stable Diffusion, and other image models. Suppresses common failure modes: device hardware bleed, perspective warp, garbled text.",
+            "version": "0.1.0",
+            "author": {
+                "name": "Justin Salcedo"
+            },
+            "source": "./",
+            "category": "design",
+            "keywords": [
+                "mockup",
+                "ui",
+                "prompt-engineering",
+                "image-generation",
+                "design",
+                "gpt-image",
+                "ideogram",
+                "flux",
+                "midjourney",
+                "stable-diffusion",
+                "claude-code"
+            ],
+            "homepage": "https://github.com/JustinSalcedo/mockup-prompt",
+            "repository": "https://github.com/JustinSalcedo/mockup-prompt"
+        }
+    ]
+}
