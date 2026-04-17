@@ -1,0 +1,67 @@
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "fruity-toolkit",
+    "description": "A growing collection of Claude Code plugins for creative and design-ops work — Gemini integrations, mockup prompting, and more to come",
+    "owner": {
+        "name": "Justin Salcedo",
+        "email": ""
+    },
+    "plugins": [
+        {
+            "name": "gemini-toolkit",
+            "description": "Long-context code analysis via Gemini CLI, image generation, multimodal vision, Claude-to-Gemini skill sync, plus Gemini-tested mockup prompting and a project-aware mockup orchestrator with fidelity-scored iteration",
+            "version": "0.2.1",
+            "author": {
+                "name": "Justin Salcedo"
+            },
+            "source": {
+                "source": "github",
+                "repo": "JustinSalcedo/gemini-toolkit"
+            },
+            "category": "integrations",
+            "keywords": [
+                "gemini",
+                "google",
+                "long-context",
+                "image-generation",
+                "vision",
+                "multimodal",
+                "skill-sync",
+                "mockup",
+                "ui",
+                "design",
+                "claude-code"
+            ],
+            "homepage": "https://github.com/JustinSalcedo/gemini-toolkit",
+            "repository": "https://github.com/JustinSalcedo/gemini-toolkit"
+        },
+        {
+            "name": "mockup-prompt",
+            "description": "Guardrail-enforced prompts for rendering UI mockups with GPT Image, Ideogram, FLUX, Midjourney, Stable Diffusion, and other image models. Suppresses common failure modes: device hardware bleed, perspective warp, garbled text.",
+            "version": "0.1.0",
+            "author": {
+                "name": "Justin Salcedo"
+            },
+            "source": {
+                "source": "github",
+                "repo": "JustinSalcedo/mockup-prompt"
+            },
+            "category": "design",
+            "keywords": [
+                "mockup",
+                "ui",
+                "prompt-engineering",
+                "image-generation",
+                "design",
+                "gpt-image",
+                "ideogram",
+                "flux",
+                "midjourney",
+                "stable-diffusion",
+                "claude-code"
+            ],
+            "homepage": "https://github.com/JustinSalcedo/mockup-prompt",
+            "repository": "https://github.com/JustinSalcedo/mockup-prompt"
+        }
+    ]
+}
