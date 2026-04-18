@@ -9,8 +9,8 @@
     "plugins": [
         {
             "name": "gemini-toolkit",
-            "description": "Long-context code analysis via Gemini CLI, image generation, multimodal vision, Claude-to-Gemini skill sync, plus Gemini-tested mockup prompting and a project-aware mockup orchestrator with fidelity-scored iteration",
-            "version": "0.2.1",
+            "description": "Long-context code analysis via Gemini CLI, image generation, multimodal vision, Claude-to-Gemini skill sync, Gemini-tested mockup and wireframe prompting, plus project-aware mockup and wireframe orchestrators with fidelity-scored iteration",
+            "version": "0.3.1",
             "author": {
                 "name": "Justin Salcedo"
             },
@@ -25,6 +25,9 @@
                 "multimodal",
                 "skill-sync",
                 "mockup",
+                "wireframe",
+                "orchestrator",
+                "project-wireframe",
                 "ui",
                 "design",
                 "claude-code"
@@ -34,8 +37,8 @@
         },
         {
             "name": "mockup-prompt",
-            "description": "Guardrail-enforced prompts for rendering UI mockups with GPT Image, Ideogram, FLUX, Midjourney, Stable Diffusion, and other image models. Suppresses common failure modes: device hardware bleed, perspective warp, garbled text.",
-            "version": "0.1.0",
+            "description": "Guardrail-enforced prompts for rendering UI mockups and lo-fi wireframes with GPT Image, Ideogram, FLUX, Midjourney, Stable Diffusion, and other image models. Suppresses common failure modes: device hardware bleed, perspective warp, garbled text, and (for wireframes) color bleed, polish drift, numeric-spec leaks.",
+            "version": "0.2.0",
             "author": {
                 "name": "Justin Salcedo"
             },
@@ -43,6 +46,7 @@
             "category": "design",
             "keywords": [
                 "mockup",
+                "wireframe",
                 "ui",
                 "prompt-engineering",
                 "image-generation",
